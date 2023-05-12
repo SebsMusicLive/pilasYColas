@@ -16,10 +16,19 @@ public class Cliente {
         test.llenarCola(5);
         test.llenarCola(2);
         test.llenarCola(4);
+        test.llenarCola(2);
+        test.llenarCola(2);
+        test.llenarCola(2);
+        test.llenarCola(4);
         
         System.out.println(test.imprimirCola());
         System.out.println(test.hallarDato(2));
-        System.out.println(test.toString());
+        System.out.println(test.imprimirCola());
+        
+        test.sacarElementoDeCola(4);
+        System.out.println(test.imprimirCola());
+        
+        
         
     }
 }

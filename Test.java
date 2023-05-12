@@ -8,47 +8,75 @@ package pilasYColas;
  *
  * @author ASUS
  */
-public class Test <E>{
+public class Test<E> {
+
     ColaLista<Object> cola = new ColaLista<>();
-    ColaLista<Object> colaEnd = new ColaLista<>();
-    
-    public Test(){
-        
+    ColaLista<Object> colaTemp = new ColaLista<>();
+
+    public Test() {
+
     }
-    
-    public void llenarCola(E dato){
+
+    public void llenarCola(E dato) {
         cola.insertar(dato);
     }
-    
-    public boolean estaEnLaCola(E dato){
-        boolean hayDato=false;
+
+    public boolean buscar(E dato) {
+        boolean hayDato = false;
         E datoCola;
         int size = cola.tamañoDeLaCola();
-        for (int i = 0; i <size; i++) {
+
+        for (int i = 0; i < size; i++) {
             datoCola = (E) cola.quitar();
-            if(datoCola.equals(dato)){
-                hayDato = true;   
+            if (estaElementoEnCola(datoCola, dato)) {
+                hayDato = true;
             }
-            colaEnd.insertar(datoCola);
+            colaTemp.insertar(datoCola);
         }
+        volverALlenarCola();
         return hayDato;
     }
-    
-    public String hallarDato(E dato){
-        String msg="";
-        if(estaEnLaCola(dato)){
-            msg="El dato esta en la cola";
-        }else{
+
+    public String hallarDato(E dato) {
+        String msg = "";
+        if (buscar(dato)) {
+            msg = "El dato esta en la cola";
+        } else {
             msg = "El dato no esta en la cola";
         }
         return msg;
     }
-    
-    public String imprimirCola(){
+
+    public void volverALlenarCola() {
+        if (!colaTemp.colaVacia()) {
+            int size = colaTemp.tamañoDeLaCola();
+            for (int i = 0; i < size; i++) {
+                cola.insertar(colaTemp.quitar());
+            }
+        }
+    }
+
+    public void sacarElementoDeCola(E dato) {
+        if (!cola.colaVacia()) {
+            E datoCola;
+            int size = cola.tamañoDeLaCola();
+            
+            for (int i = 0; i < size; i++) {
+                datoCola = (E) cola.quitar();
+                if(!estaElementoEnCola(datoCola, dato)){
+                    colaTemp.insertar(datoCola);
+                }
+            }
+            volverALlenarCola();
+        }
+    }
+
+    public boolean estaElementoEnCola(E datoCola, E dato) {
+        return datoCola.equals(dato);
+    }
+
+    public String imprimirCola() {
         return cola.print();
     }
-    
-    public String toString(){
-        return colaEnd.print();
-    }
+
 }
