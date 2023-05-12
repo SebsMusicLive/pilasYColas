@@ -10,6 +10,16 @@ package pilasYColas;
  */
 public class Cliente {
     public static void main(String[] args) {
+        Test test = new Test();
+        
+        test.llenarCola(8);
+        test.llenarCola(5);
+        test.llenarCola(2);
+        test.llenarCola(4);
+        
+        System.out.println(test.imprimirCola());
+        System.out.println(test.hallarDato(2));
+        System.out.println(test.toString());
         
     }
 }

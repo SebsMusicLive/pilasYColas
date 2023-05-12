@@ -33,30 +33,32 @@ public class ColaLista<E> {
 
     public E quitar() {
         E rta = frente.getData();
-        
-        if(!colaVacia()){
-            frente = frente.getNext();
+        NodoCola<E> temp = frente;
+        if (!colaVacia()) {
+            temp = temp.getNext();
+            frente = temp;
             size--;
         }
+
         return rta;
     }
 
     public boolean colaVacia() {
         return size == 0;
     }
-    
-    public E getFrente() throws Exception{
-        if(!colaVacia()){
+
+    public E getFrente() throws Exception {
+        if (!colaVacia()) {
             return frente.getData();
-        }
-        else{
+        } else {
             throw new Exception("La cola esta vacia, por lo que no se puede obtener el primer elemento");
         }
     }
-    
-    public int tamañoDeLaCola(){
+
+    public int tamañoDeLaCola() {
         return size;
     }
+
     public String print() {
         StringBuffer sb = new StringBuffer("");
 
