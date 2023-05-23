@@ -51,10 +51,13 @@ public class Cliente {
             
         }
         System.out.println(inver.imprimirPilaOriginal());
+        System.out.println(inver.obtenerDatoFinalOriginal());
         
         inver.invertirPila();
         
         System.out.println(inver.imprimirPilaInvertida());
+        System.out.println(inver.obtenerDatoFinalInvertida());
+        
         
     }
 }

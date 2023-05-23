@@ -21,7 +21,11 @@ public class InvertirElementosPila {
     }
     
     public void invertirPila() throws Exception{
-        pilaInvertida.push(pilaOriginal.pop());
+        for (int i = 0; i < pilaOriginal.getSize(); i++) {
+            pilaInvertida.push(pilaOriginal.pop());
+            
+        }
+        
     }
     
     public String imprimirPilaOriginal() throws Exception{
@@ -29,7 +33,14 @@ public class InvertirElementosPila {
     }
     
     public String imprimirPilaInvertida() throws Exception{
-        return pilaOriginal.print();
+        return pilaInvertida.print();
     }
     
+    public int obtenerDatoFinalOriginal() throws Exception{
+        return pilaOriginal.obtenerFondoPila();
+    }
+    
+    public int obtenerDatoFinalInvertida() throws Exception{
+        return pilaInvertida.obtenerFondoPila();
+    }
 }
