@@ -22,6 +22,7 @@ public class Cliente {
 //        test.llenarCola(4);
 //        
 //        System.out.println(test.imprimirCola());
+//        System.out.println(test.obtenerFinCola());
 //        System.out.println(test.hallarDato(2));
 //        System.out.println(test.imprimirCola());
 //        
@@ -44,19 +45,19 @@ public class Cliente {
 //        System.out.println("La cola con los numeros mayores a "+numeroDiv+" es " +m.imprimirColaMayores());
 //        
 
-        InvertirElementosPila inver = new InvertirElementosPila();
-        
-        for (int i = 0; i < 10; i++) {
-            inver.llenarPilaOriginal((int)(Math.random()*10+1));
-            
-        }
-        System.out.println(inver.imprimirPilaOriginal());
-        System.out.println(inver.obtenerDatoFinalOriginal());
-        
-        inver.invertirPila();
-        
-        System.out.println(inver.imprimirPilaInvertida());
-        System.out.println(inver.obtenerDatoFinalInvertida());
+//        InvertirElementosPila inver = new InvertirElementosPila();
+//        
+//        for (int i = 0; i < 10; i++) {
+//            inver.llenarPilaOriginal((int)(Math.random()*10+1));
+//            
+//        }
+//        System.out.println(inver.imprimirPilaOriginal());
+//        System.out.println(inver.obtenerDatoFinalOriginal());
+//        
+//        inver.invertirPila();
+//        
+//        System.out.println(inver.imprimirPilaInvertida());
+//        System.out.println(inver.obtenerDatoFinalInvertida());
         
         
     }

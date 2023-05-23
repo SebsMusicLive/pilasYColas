@@ -54,6 +54,14 @@ public class ColaLista<E> {
             throw new Exception("La cola esta vacia, por lo que no se puede obtener el primer elemento");
         }
     }
+    
+    public E getFin() throws Exception{
+        if (!colaVacia()) {
+            return fin.getData();
+        } else {
+            throw new Exception("La cola esta vacia, por lo que no se puede obtener el primer elemento");
+        }
+    }
 
     public int tamañoDeLaCola() {
         return size;

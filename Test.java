@@ -78,5 +78,9 @@ public class Test<E> {
     public String imprimirCola() {
         return cola.print();
     }
+    
+    public Object obtenerFinCola() throws Exception{
+        return cola.getFin();
+    }
 
 }
